@@ -1,5 +1,6 @@
 #include <cmath>
 #include <iostream>
+#include "constants.h"
 
 int get_user_input() {
     int response;
@@ -9,9 +10,8 @@ int get_user_input() {
 }
 
 double get_height(double current_meters, double seconds) {
-    const double gravity = 9.8;
     double seconds_squared = std::pow(seconds, 2);
-    double distance_fallen = gravity * seconds_squared / 2;
+    double distance_fallen = Constants::gravity * seconds_squared / 2;
     return current_meters - distance_fallen;
 }
 
